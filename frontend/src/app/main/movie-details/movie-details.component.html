@@ -1,0 +1,24 @@
+<div *ngIf="movie">
+  <img src="{{ movie.Poster }}" alt="N/A" />
+  <h1>{{ movie.Title }}</h1>
+  <h2>{{ movie.Year }}</h2>
+  <h3>{{ movie.Runtime }}</h3>
+  <h4>{{ movie.Genre }}</h4>
+  <h5>{{ movie.Director }}</h5>
+  <h6>{{ movie.Actors }}</h6>
+  <div *ngIf="movie.avg_rating>=0">
+  <fa-icon [icon]="faStar" [ngClass]="{'orange': movie.avg_rating > 0}"></fa-icon>
+  <fa-icon [icon]="faStar" [ngClass]="{'orange': movie.avg_rating > 1}"></fa-icon>
+  <fa-icon [icon]="faStar" [ngClass]="{'orange': movie.avg_rating > 2}"></fa-icon>
+  <fa-icon [icon]="faStar" [ngClass]="{'orange': movie.avg_rating > 3}"></fa-icon>
+  <fa-icon [icon]="faStar" [ngClass]="{'orange': movie.avg_rating > 4}"></fa-icon>
+  ({{ movie.no_of_ratings }})
+  </div>
+  <p>{{ movie.Plot }}</p>
+
+  <div id="rate-container" *ngIf="movie.avg_rating>=0">
+    <h2>Rate it !</h2>
+    <fa-icon *ngFor="let rate of [1,2,3,4,5]" [icon]="faStar" (mouseenter)="rateHover(rate)" (mouseleave)="rateHovered = rateClick" (click)="rateClicked(rateClick=rate)" [ngClass]="{'purple': rateHovered >= rate}"></fa-icon>
+  </div>
+
+</div>

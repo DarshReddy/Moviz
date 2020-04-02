@@ -1,0 +1,10 @@
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+
+#logout {
+  margin-right: 0;
+  margin-left: auto;
+}

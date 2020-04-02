@@ -1,0 +1,11 @@
+div {
+  margin: auto;
+  width: 60%;
+  height: auto;
+  border: 2px solid purple;
+  padding: 30px;
+}
+
+#formsub {
+  margin-left: 0;
+}

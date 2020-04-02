@@ -1,0 +1,19 @@
+<form [formGroup]="movieForm" (ngSubmit)="saveForm()" >
+  <label>Title</label><br>
+  <input type="text" formControlName="title"/><br>
+  <label>Year</label><br>
+  <input type="number" formControlName="year"/><br>
+  <label>Runtime</label><br>
+  <input type="text" formControlName="runtime"/><br>
+  <label>Genre</label><br>
+  <input type="text" formControlName="genre"/><br>
+  <label>Director</label><br>
+  <input type="text" formControlName="director"/><br>
+  <label>Actors</label><br>
+  <input type="text" formControlName="actors"/><br>
+  <label>Plot</label><br>
+  <textarea type="text" formControlName="plot"></textarea><br>
+  <button id="formsubmit" type="submit">
+    <span *ngIf="imdbID">Add and Rate!</span>
+  </button>
+</form>

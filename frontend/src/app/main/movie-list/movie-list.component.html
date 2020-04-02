@@ -1,0 +1,23 @@
+<input type="text" placeholder="Search by enter key" (keyup)="onSearch($event)">
+<h4>Movies you can add to database!</h4>
+<hr>
+<ng-container *ngIf="searchData">
+  <div *ngFor="let movie of searchData" class="movie-item">
+    <h3 (click)="resultClicked(movie)">
+      <span id="title">{{movie.Title}}</span><br>
+      <span>{{movie.Year}}</span>
+    </h3>
+    <fa-icon [icon]="faEdit" (click)="editMovie(movie)"></fa-icon>
+  </div>
+</ng-container>
+<h4>Movies already in database!</h4>
+<hr>
+<ng-container *ngIf="movies">
+  <div *ngFor="let movie of movies" class="movie-item">
+    <h3 (click)="movieClicked(movie)">
+      <span id="title">{{movie.Title}}</span><br>
+      <span>{{movie.Year}}</span>
+    </h3>
+    <fa-icon id="trash" [icon]="faTrash" (click)="delMovie(movie)"></fa-icon>
+  </div>
+</ng-container>
